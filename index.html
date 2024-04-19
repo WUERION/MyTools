@@ -15,9 +15,9 @@
         <div class="backdrop-blur-[2px] flex justify-evenly flex-col h-[100dvh] md:h-full">
             <nav class="hidden md:block">
                 <ul class="flex justify-center fixed bacdrop-md bg-gray-500 w-full">
-                    <li class="button-nav py-2.5"><a href="#" class="border py-2.5 px-5 button-nav">colors</a></li>
-                    <li class="button-nav py-2.5"><a href="#" class="border py-2.5 px-5 button-nav">Gradinets</a></li>
-                    <li class="button-nav py-2.5"><a href="#" class="border py-2.5 px-5 button-nav">Fonts</a></li>
+                    <li class="button-nav py-2.5"><a href="#colors" class="border py-2.5 px-5 button-nav">colors</a></li>
+                    <li class="button-nav py-2.5"><a href="#gradients" class="border py-2.5 px-5 button-nav">Gradinets</a></li>
+                    <li class="button-nav py-2.5"><a href="#fonts" class="border py-2.5 px-5 button-nav">Fonts</a></li>
                     <li class="button-nav py-2.5"><a href="#" class="border py-2.5 px-5 button-nav">Effects</a></li>
                     <li class="button-nav py-2.5"><a href="#" class="border py-2.5 px-5 button-nav">Buttons</a></li>
                     <li class="button-nav py-2.5"><a href="#" class="border py-2.5 px-5 button-nav">Borders</a></li>
@@ -79,6 +79,32 @@
                     <button class="button-copy">Copy</button>
                 </div>
             </div>
+            </div>
+        </section>
+        <!--* section gradients -->
+        <section id="gradients" class="p-5">
+            <div class="text-center border rounded-md">
+                <h2 class="font-semibold text-base lg:text-xl">Gradientes</h2>
+                <p class="text-base lg:text-lg">Aqui encontraras las gradientes que mas utilizo y los que mas me gustan</p>
+            </div>
+            <div class="flex flex-col items-center gap-2 md:flex-row justify-center md:mt-5 w-full">
+                <p class="flex mx-3 lg:mx-0 lg:text-lg text-base">Ingresa los colores <span class="hidden md:block mx-3"> --> </span></p>
+                <input type="text" class="px-2 text-black rounded-md outline-none" placeholder="#00ffff">
+                <input type="text" class="px-2 text-black rounded-md outline-none" placeholder="#00ff2a">
+                <input type="number" class="px-2 text-black rounded-md outline-none"  placeholder="90deg" id="">
+                <div class="md:mx-14">
+                    <button class="w-full text-base lg:text-lg px-2 border bg-gray-500 rounded-md">Crear Gradiente</button>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 p-5" id="containerCardsGradiendt">
+                <div class="cards-gradient border">
+                    <div class="block-gradient" id="block-gradient"></div>
+                    <div class="container-text-gradient">
+                        <p>#FFE53B</p>
+                        <p>#00FFFF</p>
+                    </div>
+                    <button class="button-copy">Copy</button>
+                </div>
             </div>
         </section>
         <!--* section fonts  -->

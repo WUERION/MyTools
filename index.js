@@ -25,14 +25,14 @@ function createBoxColor() {
     containerTextColors.classList.add("container-text-color");
     newCard.appendChild(containerTextColors);
 
-    //* creamis el texto hexa
+    //* creamos el texto hexa
     let newTextHexa = document.createElement("p");
     newTextHexa.classList.add("text-color");
     containerTextColors.appendChild(newTextHexa);
     newTextHexa.innerText = inputColor || inputBoxColor;
 
     //* creamos el texto RGB
-    let coloRgb = hexa_rgb(inputColor);
+    let coloRgb = hexa_rgb(inputColor || inputBoxColor);
     let newTextRgb = document.createElement("p");
     newTextRgb.classList.add("text-color");
     containerTextColors.appendChild(newTextRgb);
@@ -95,5 +95,5 @@ function fontURL(url) {
     document.head.appendChild(cssLinkFont);
 }
 
-bntCreateFont.addEventListener('click', function() { createBoxFont(); });
-createBntColor.addEventListener('click', function() { createBoxColor(); });
+bntCreateFont.addEventListener('click', function () { createBoxFont(); });
+createBntColor.addEventListener('click', function () { createBoxColor(); });
