@@ -1,6 +1,10 @@
 //* vars the colors
 let createBntColor = document.getElementById("buttonColor");
 let containerCardsColors = document.getElementById("containerCardsColors");
+//* vars the gradients
+let BntGradient = document.getElementById("buttonGradient");
+let containerCardsGradient = document.getElementById("containerCardsGradiendt");
+//* vars hthe fonts
 let containerCardFonts = document.getElementById("containerCardsFonts");
 let bntCreateFont = document.getElementById("buttonFont");
 
@@ -55,6 +59,44 @@ function createBoxColor() {
     }
 }
 
+function createBoxgradient() {
+    let fristColor = document.getElementById("inputFristColor").value;
+    let codeDeg = document.getElementById("inputDeg").value;
+    let secundColor = document.getElementById("inputSecondColor").value;
+
+    console.log(fristColor)
+
+    let newCardGradient = document.createElement("div");
+    newCardGradient.classList.add("cards-gradient");
+    containerCardsGradient.appendChild(newCardGradient);
+
+    let newGradient = document.createElement("div");
+    newGradient.classList.add("block-gradient");
+    newCardGradient.appendChild(newGradient);
+    newGradient.style.background = `linear-gradient(${codeDeg}, ${fristColor}, ${secundColor})`;
+
+    let containerTextGradient = document.createElement("div");
+    containerTextGradient.classList.add("container-text-gradient");
+    newCardGradient.appendChild(containerTextGradient);
+
+    let fristTextColor = document.createElement('p');
+    fristTextColor.innerText = fristColor;
+    containerTextGradient.appendChild(fristTextColor);
+
+    let textDeg = document.createElement('p');
+    textDeg.innerText = codeDeg;
+    containerTextGradient.appendChild(textDeg);
+
+    let secundTextColor = document.createElement('p');
+    secundTextColor.innerText = secundColor;
+    containerTextGradient.appendChild(secundTextColor);
+
+    let bntCopyGradient = document.createElement("button");
+    bntCopyGradient.classList.add("button-copy");
+    bntCopyGradient.innerText = 'Copy';
+    newCardGradient.appendChild(bntCopyGradient);
+}
+
 function createBoxFont() {
     let inputNameFont = document.getElementById("inputNameFont").value;
     let inputURL = document.getElementById("inputURL").value;
@@ -96,4 +138,5 @@ function fontURL(url) {
 }
 
 bntCreateFont.addEventListener('click', function () { createBoxFont(); });
+BntGradient.addEventListener('click', function () { createBoxgradient(); });
 createBntColor.addEventListener('click', function () { createBoxColor(); });
