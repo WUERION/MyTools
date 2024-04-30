@@ -2,7 +2,7 @@
     $srevername = 'localhost';
     $username = 'root';
     $password = '';
-    $dbname = 'database';
+    $dbname = 'datamytools';
     
     // Crear conexión
     $conn = new mysqli($srevername, $username, $password, $dbname);
@@ -17,7 +17,7 @@
     
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()){
-            echo "id " . $row["id"]. " - Nombre: ". $row['name']. " - hexa: ". $row["hexa"]. " - rgb: ". $row["rgb"] . "<br>";
+            echo $row["hexa"]."<br>";
         }
     } else {
         echo "0  resultados";

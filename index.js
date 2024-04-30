@@ -11,7 +11,6 @@ let bntCreateFont = document.getElementById("buttonFont");
 function createBoxColor() {
     //* obtenemos el valor del input
     let inputColor = document.getElementById("inputCodeColor").value;
-    let inputBoxColor = document.getElementById("inputBoxColor").value;
 
     //* creamos la nueva card
     let newCard = document.createElement('div');
@@ -22,21 +21,24 @@ function createBoxColor() {
     let newColor = document.createElement("div");
     newColor.classList.add("block-color");
     newCard.appendChild(newColor);
-    newColor.style.backgroundColor = inputColor || inputBoxColor;
+    newColor.style.backgroundColor = inputColor;
+
 
     //* creamos el texto del color
     let containerTextColors = document.createElement("div");
     containerTextColors.classList.add("container-text-color");
     newCard.appendChild(containerTextColors);
 
+
     //* creamos el texto hexa
     let newTextHexa = document.createElement("p");
     newTextHexa.classList.add("text-color");
     containerTextColors.appendChild(newTextHexa);
-    newTextHexa.innerText = inputColor || inputBoxColor;
+    newTextHexa.innerText = inputColor || '#FFFFFF';
+    newTextHexa.style.textTransform = "uppercase";
 
     //* creamos el texto RGB
-    let coloRgb = hexa_rgb(inputColor || inputBoxColor);
+    let coloRgb = hexa_rgb(inputColor);
     let newTextRgb = document.createElement("p");
     newTextRgb.classList.add("text-color");
     containerTextColors.appendChild(newTextRgb);
@@ -80,16 +82,19 @@ function createBoxgradient() {
     newCardGradient.appendChild(containerTextGradient);
 
     let fristTextColor = document.createElement('p');
-    fristTextColor.innerText = fristColor;
     containerTextGradient.appendChild(fristTextColor);
+    fristTextColor.innerText = fristColor || '#FFE3B';
+    fristTextColor.style.textTransform = 'uppercase';
 
     let textDeg = document.createElement('p');
     textDeg.innerText = codeDeg;
     containerTextGradient.appendChild(textDeg);
+    textDeg.style.textTransform = 'uppercase';
 
     let secundTextColor = document.createElement('p');
-    secundTextColor.innerText = secundColor;
     containerTextGradient.appendChild(secundTextColor);
+    secundTextColor.innerText = secundColor || '#00FFFF';
+    secundTextColor.style.textTransform = 'uppercase'
 
     let bntCopyGradient = document.createElement("button");
     bntCopyGradient.classList.add("button-copy");
@@ -109,7 +114,7 @@ function createBoxFont() {
     let nameFont = document.createElement("h3");
     nameFont.classList.add("name-font");
     newCardFont.appendChild(nameFont);
-    nameFont.innerText = inputNameFont;
+    nameFont.innerText = inputNameFont || 'Nunito';
     nameFont.style.fontFamily = inputNameFont;
 
     let boxTextExampleFont = document.createElement("div");
@@ -136,6 +141,7 @@ function fontURL(url) {
     cssLinkFont.href = url;
     document.head.appendChild(cssLinkFont);
 }
+
 
 bntCreateFont.addEventListener('click', function () { createBoxFont(); });
 BntGradient.addEventListener('click', function () { createBoxgradient(); });

@@ -11,7 +11,7 @@
 </head>
 
 <body class="text-white bg-black">
-    <nav class="hidden md:block fixed  top-0 w-full border border-red-500">
+    <nav class="hidden md:block fixed  top-0 w-full">
         <ul class="flex justify-center bg-gray-500 w-full">
             <li class="button-nav py-2.5"><a href="#colors" class="border py-2.5 px-5 button-nav">colors</a></li>
             <li class="button-nav py-2.5"><a href="#gradients" class="border py-2.5 px-5 button-nav">gradients</a></li>
@@ -49,14 +49,11 @@
                 <p class="text-base lg:text-lg">Aqui encontraras los colores que mas utilizo y los que mas me gustan</p>
             </div>
             <div class="flex flex-col items-center gap-2 md:flex-row justify-center md:mt-5 w-full">
-                <p class="flex mx-3 lg:mx-0 lg:text-lg">Ingresa el Color <span class="hidden md:block mx-3"> --> </span>
+                <p class="flex mx-3 lg:mx-0 lg:text-lg">Ingresa el Color <span class="hidden md:block"> --> </span>
                 </p>
-                <input type="text" class="px-2 block text-black lg:hidden rounded-md outline-none"
-                    placeholder="Ingresa el codigo HEXA o RGB" id="inputCodeColor">
-                <input type="color" class="hidden lg:block" id="inputBoxColor">
+                <input type="text" class="px-2 text-black rounded-md outline-none" placeholder="Ingresa el codigo HEXA o RGB" id="inputCodeColor">
                 <div class="md:mx-14">
-                    <button class="w-full text-base lg:text-lg px-2 border bg-gray-500 rounded-md"
-                        id="buttonColor">Crear Color</button>
+                    <button class="w-full text-base lg:text-lg px-2 border bg-gray-500 rounded-md" id="buttonColor">Crear Color</button>
                 </div>
             </div>
             <!--* container  -->
@@ -68,18 +65,8 @@
                         <p class="textHexa">#FFFFFF</p>
                         <p class="textRGB">rgb(255, 255, 255)</p>
                     </div>
-                    <button class="button-copy" id="copy">Copy</button>
-                </div>
-                <div class="cards-colors">
-                    <div class="block-color" id="block-color">
-                    </div>
-                    <div class="container-text-color">
-                        <p class="textHexa">#000000</p>
-                        <p class="textRGB">rgb(0, 0, 0)</p>
-                    </div>
                     <button class="button-copy">Copy</button>
                 </div>
-            </div>
             </div>
         </section>
         <!--* section gradients -->
@@ -90,17 +77,12 @@
                 </p>
             </div>
             <div class="flex flex-col items-center gap-2 lg:flex-row justify-center md:mt-5 w-full">
-                <p class="flex mx-3 md:mx-0 lg:text-lg text-base my-2 md:my-0">Ingresa los colores <span
-                        class="hidden lg:block mx-3"> --> </span></p>
+                <p class="flex mx-3 md:mx-0 lg:text-lg text-base my-2 md:my-0">Ingresa los colores <span class="hidden lg:block mx-3"> --> </span></p>
                 <div class="flex flex-col gap-2 justify-center md:flex-row">
-                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4"
-                        placeholder="#FFE53B" id="inputFristColor">
-                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4"
-                        placeholder="90deg" id="inputDeg">
-                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4"
-                        placeholder="#00ffff" id="inputSecondColor">
-                    <button class="w-full text-base lg:text-lg px-2 border bg-gray-500 rounded-md md:w-1/5 lg:w-1/5"
-                        id="buttonGradient">Crear gradiente</button>
+                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4" placeholder="#FFE53B" id="inputFristColor">
+                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4" placeholder="90deg" id="inputDeg">
+                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4" placeholder="#00ffff" id="inputSecondColor">
+                    <button class="w-full text-base lg:text-lg px-2 border bg-gray-500 rounded-md md:w-1/5 lg:w-1/5" id="buttonGradient">Crear gradiente</button>
                 </div>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 p-5" id="containerCardsGradiendt">
@@ -125,23 +107,13 @@
             <div class="flex justify-center items-center py-2">
                 <div class="flex flex-col items-center justify-center w-full gap-2 md:flex-row lg:gap-6">
                     <p class="flex mx-2 lg:mx-0">Ingresa la fuente <span class="hidden md:block mx-3"> --> </span></p>
-                    <input type="text" class="rounded-md outline-none px-2 text-black" placeholder="Ingresa el nombre"
-                        id="inputNameFont">
-                    <input type="url" class="rounded-md outline-none px-2 text-black" placeholder="Ingresa la URL"
-                        id="inputURL">
-                    <button class="md:w-1/7 text-base lg:text-lg px-2 border bg-gray-500 rounded-md"
-                        id="buttonFont">Subir Font</button>
+                    <input type="text" class="rounded-md outline-none px-2 text-black" placeholder="Ingresa el nombre" id="inputNameFont">
+                    <input type="url" class="rounded-md outline-none px-2 text-black" placeholder="Ingresa la URL" id="inputURL">
+                    <button class="md:w-1/7 text-base lg:text-lg px-2 border bg-gray-500 rounded-md" id="buttonFont">Subir Font</button>
                 </div>
             </div>
             <div class="">
                 <div class="grid gap-4 p-5 md:grid-cols-2 lg:grid-cols-4" id="containerCardsFonts">
-                    <div class="card-font">
-                        <h3 class="name-font">Nunito</h3>
-                        <div class="box-the-text">
-                            <p class="text-example">A, a, B, b, C, c, 1, 2, 3, 4, 5, 0</p>
-                        </div>
-                        <button class="button-copy">Copy</button>
-                    </div>
                     <div class="card-font">
                         <h3 class="name-font">Nunito</h3>
                         <div class="box-the-text">
