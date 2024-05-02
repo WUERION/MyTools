@@ -10,8 +10,9 @@ let bntCreateFont = document.getElementById("buttonFont");
 
 function createBoxColor() {
     //* obtenemos el valor del input
-    let inputColor = document.getElementById("inputCodeColor").value;
-
+    // let inputColor = document.getElementById("inputCodeColor").value;
+    let inputColor = dataInput;
+    console.log(inputColor);
     //* creamos la nueva card
     let newCard = document.createElement('div');
     newCard.classList.add('cards-colors');

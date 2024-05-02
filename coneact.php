@@ -1,26 +1,39 @@
-<?php                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-    $srevername = 'localhost';
-    $username = 'root';
-    $password = '';
-    $dbname = 'datamytools';
-    
-    // Crear conexión
-    $conn = new mysqli($srevername, $username, $password, $dbname);
-    
-    // Verificar conexión
-    if ($conn->connect_error) {
-        die("conexion fallida: " . $conn->connect_error);
+<?php
+$srevername = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'datamytools';
+
+// Crear conexión
+$conn = mysqli_connect($srevername, $username, $password, $dbname);
+
+if (!$conn) {
+    die('Conexion fallida:' . mysqli_connect_error());
+}
+
+// recoger los datos del form
+$code_color = $_POST['dataColor'];
+
+
+// sentencia de insercion
+$sql = "INSERT INTO colores (hexa) VALUES ('$code_color')";
+
+if ($conn->query($sql) === true) {
+    echo "registro creado";
+} else {
+    echo "Error:" . $sql . '<br>' . $conn->error;
+}
+
+// sentencia para obtener los datos
+$sql_data = 'SELECT * FROM colores';
+$result = $conn->query($sql_data);
+
+if($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo $row['hexa'];
     }
-    
-    $sql = "SELECT * FROM colores";
-    $result = $conn->query($sql);
-    
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()){
-            echo $row["hexa"]."<br>";
-        }
-    } else {
-        echo "0  resultados";
-    }
-    $conn->close();
-?>
+} else {
+    echo '0 resultados';
+}
+
+$conn->close();

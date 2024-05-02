@@ -1,3 +1,5 @@
+<!-- -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,10 +53,10 @@
             <div class="flex flex-col items-center gap-2 md:flex-row justify-center md:mt-5 w-full">
                 <p class="flex mx-3 lg:mx-0 lg:text-lg">Ingresa el Color <span class="hidden md:block"> --> </span>
                 </p>
-                <input type="text" class="px-2 text-black rounded-md outline-none" placeholder="Ingresa el codigo HEXA o RGB" id="inputCodeColor">
-                <div class="md:mx-14">
-                    <button class="w-full text-base lg:text-lg px-2 border bg-gray-500 rounded-md" id="buttonColor">Crear Color</button>
-                </div>
+                <form action="coneact.php" method="POST">
+                    <input type="text" class="px-2 text-black rounded-md outline-none" placeholder="Ingresa el codigo HEXA o RGB" id="inputCodeColor" name="dataColor">
+                    <input type="submit" value="Enviar" id="buttonColor" class="text-base lg:text-lg px-2 border bg-gray-500 rounded-md">
+                </form>
             </div>
             <!--* container  -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 p-5" id="containerCardsColors">
@@ -126,6 +128,9 @@
         </section>
     </main>
     <script src="index.js"></script>
+    <script>
+        let dataInput = document.getElementById('inputCodeColor').value;
+    </script>
     <script src="colores.js"></script>
 </body>
 
