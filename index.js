@@ -8,11 +8,11 @@ let containerCardsGradient = document.getElementById("containerCardsGradiendt");
 let containerCardFonts = document.getElementById("containerCardsFonts");
 let bntCreateFont = document.getElementById("buttonFont");
 
-function createBoxColor() {
+function createBoxColor(color) {
     //* obtenemos el valor del input
-    // let inputColor = document.getElementById("inputCodeColor").value;
-    let inputColor = dataInput;
-    console.log(inputColor);
+    let inputColor = color || document.getElementById("inputCodeColor").value;
+
+    
     //* creamos la nueva card
     let newCard = document.createElement('div');
     newCard.classList.add('cards-colors');
@@ -22,8 +22,7 @@ function createBoxColor() {
     let newColor = document.createElement("div");
     newColor.classList.add("block-color");
     newCard.appendChild(newColor);
-    newColor.style.backgroundColor = inputColor;
-
+    newColor.style.backgroundColor = color;
 
     //* creamos el texto del color
     let containerTextColors = document.createElement("div");
@@ -147,3 +146,9 @@ function fontURL(url) {
 bntCreateFont.addEventListener('click', function () { createBoxFont(); });
 BntGradient.addEventListener('click', function () { createBoxgradient(); });
 createBntColor.addEventListener('click', function () { createBoxColor(); });
+
+fetch('colores.php').then(Response => Response.json()).then(colors => {
+    colors.forEach((color) => {
+        createBoxColor(color);
+    })
+})

@@ -25,15 +25,22 @@ if ($conn->query($sql) === true) {
 }
 
 // sentencia para obtener los datos
-$sql_data = 'SELECT * FROM colores';
+$sql_data = 'SELECT id, hexa FROM colores';
 $result = $conn->query($sql_data);
 
-if($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo $row['hexa'];
+if($result) {
+    // while ($row = $result->fetch_assoc()) {
+        // echo $row['id'], $row['hexa'];
+    // }
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<p style="color: cyan;">' . $row['hexa'] . '</p>';
+        
     }
 } else {
-    echo '0 resultados';
+    echo 'Error' . $sql . '<br>' . mysqli_error($conn);
 }
 
+header('Location: index.php');
+
 $conn->close();
+?>

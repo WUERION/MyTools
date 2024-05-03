@@ -51,13 +51,16 @@
             <div class="flex flex-col items-center gap-2 md:flex-row justify-center md:mt-5 w-full">
                 <p class="flex mx-3 lg:mx-0 lg:text-lg">Ingresa el Color <span class="hidden md:block mx-3"> --> </span>
                 </p>
-                <input type="text" class="px-2 block text-black lg:hidden rounded-md outline-none"
-                    placeholder="Ingresa el codigo HEXA o RGB" id="inputCodeColor">
-                <input type="color" class="hidden lg:block" id="inputBoxColor">
-                <div class="md:mx-14">
+                <form action="coneact.php" method="post">
+                    <input type="text" class="px-2 text-black rounded-md outline-none"
+                        placeholder="Ingresa el codigo HEXA o RGB" id="inputCodeColor">
+                    <input type="submit" value="Enviar" id="buttonColor"
+                        class=" text-base lg:text-lg px-2 border bg-gray-500 rounded-md">
+                </form>
+                <!-- <div class="md:mx-14">
                     <button class="w-full text-base lg:text-lg px-2 border bg-gray-500 rounded-md"
                         id="buttonColor">Crear Color</button>
-                </div>
+                </div> -->
             </div>
             <!--* container  -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 p-5" id="containerCardsColors">
@@ -68,7 +71,7 @@
                         <p class="textHexa">#FFFFFF</p>
                         <p class="textRGB">rgb(255, 255, 255)</p>
                     </div>
-                    <button class="button-copy" id="copy">Copy</button>
+                    <button class="button-copy">Copy</button>
                 </div>
                 <div class="cards-colors">
                     <div class="block-color" id="block-color">
@@ -154,6 +157,10 @@
         </section>
     </main>
     <script src="index.js"></script>
+    <script>
+        // let dataInput = document.getElementById('inputCodeColor').value;
+        let dataInput = document.getElementById('inputCodeColor').value;
+    </script>
     <script src="colores.js"></script>
 </body>
 
