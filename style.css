@@ -4,10 +4,12 @@
 * {
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
-    /* font-weight: <weight>; */
     font-style: normal;
 }
 
+br {
+    border: 2px solid white;
+}
 
 header {
     background-image: url(/img/back-transformed.webp);
@@ -26,6 +28,29 @@ header {
     transform: scale(1.2);
     transition: 0.5s;
     border-radius: 0 0 10px 10px;
+}
+
+.notify p {
+    text-wrap: nowrap;
+    overflow: hidden;
+    animation: expandNotify 5s infinite;
+}
+
+@keyframes expandNotify {
+    0% {
+        width: 0%;
+        background-color: rgba(0, 0, 0, 10%);
+    }
+
+    50% {
+        width: 50%;
+        background-color: rgba(0, 0, 0, 50%);
+    }
+
+    100% {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 100%);
+    }
 }
 
 /** block the cards  */

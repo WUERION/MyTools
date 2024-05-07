@@ -1,6 +1,7 @@
 //* vars the colors
 let createBntColor = document.getElementById("buttonColor");
 let containerCardsColors = document.getElementById("containerCardsColors");
+let textColorCopy = document.getElementById('textNotify')
 //* vars the gradients
 let BntGradient = document.getElementById("buttonGradient");
 let containerCardsGradient = document.getElementById("containerCardsGradiendt");
@@ -11,7 +12,6 @@ let bntCreateFont = document.getElementById("buttonFont");
 function createBoxColor(color) {
     //* obtenemos el valor del input
     let inputColor = color || document.getElementById("inputCodeColor").value;
-
     
     //* creamos la nueva card
     let newCard = document.createElement('div');
@@ -28,7 +28,6 @@ function createBoxColor(color) {
     let containerTextColors = document.createElement("div");
     containerTextColors.classList.add("container-text-color");
     newCard.appendChild(containerTextColors);
-
 
     //* creamos el texto hexa
     let newTextHexa = document.createElement("p");
@@ -50,7 +49,16 @@ function createBoxColor(color) {
     newCard.appendChild(bntCopyColor);
     bntCopyColor.innerText = 'Copy';
 
-
+    const copyColor = async() => {
+        try {
+            await navigator.clipboard.writeText(color);
+            console.log('texto copiado')
+            alert("color copiado " + color);
+        } catch (err) {
+            console.log('error al copiar el color' + err);
+        }
+    }
+    
     function hexa_rgb(code_hexa) {
         code_hexa = code_hexa.replace(/^#/, ''); //* liminamos el #
         //* convertir los valores hexa a decimal
@@ -59,14 +67,15 @@ function createBoxColor(color) {
         let b = parseInt(code_hexa.substring(4, 6), 16);
         return 'rgb(' + r + "," + g + "," + b + ")";
     }
+    bntCopyColor.addEventListener('click', function () { copyColor(color) })
 }
 
-function createBoxgradient() {
-    let fristColor = document.getElementById("inputFristColor").value;
-    let codeDeg = document.getElementById("inputDeg").value;
-    let secundColor = document.getElementById("inputSecondColor").value;
+function createBoxgradient(val1, val2, val3) {
+    let firstColor = val1 || document.getElementById("inputfirstColor").value;
+    let codeDeg = val2 || document.getElementById("inputDeg").value;
+    let secondColor = val3 || document.getElementById("inputSecondColor").value;
 
-    console.log(fristColor)
+    console.log(val1, val2, val3)
 
     let newCardGradient = document.createElement("div");
     newCardGradient.classList.add("cards-gradient");
@@ -75,25 +84,25 @@ function createBoxgradient() {
     let newGradient = document.createElement("div");
     newGradient.classList.add("block-gradient");
     newCardGradient.appendChild(newGradient);
-    newGradient.style.background = `linear-gradient(${codeDeg}, ${fristColor}, ${secundColor})`;
+    newGradient.style.background = `linear-gradient(${codeDeg}, ${firstColor}, ${secondColor})`;
 
     let containerTextGradient = document.createElement("div");
     containerTextGradient.classList.add("container-text-gradient");
     newCardGradient.appendChild(containerTextGradient);
 
-    let fristTextColor = document.createElement('p');
-    containerTextGradient.appendChild(fristTextColor);
-    fristTextColor.innerText = fristColor || '#FFE3B';
-    fristTextColor.style.textTransform = 'uppercase';
+    let firstTextColor = document.createElement('p');
+    containerTextGradient.appendChild(firstTextColor);
+    firstTextColor.innerText = firstColor || '#FFE3B';
+    firstTextColor.style.textTransform = 'uppercase';
 
     let textDeg = document.createElement('p');
-    textDeg.innerText = codeDeg;
+    textDeg.innerText = codeDeg || '90deg';
     containerTextGradient.appendChild(textDeg);
     textDeg.style.textTransform = 'uppercase';
 
     let secundTextColor = document.createElement('p');
     containerTextGradient.appendChild(secundTextColor);
-    secundTextColor.innerText = secundColor || '#00FFFF';
+    secundTextColor.innerText = secondColor || '#00FFFF';
     secundTextColor.style.textTransform = 'uppercase'
 
     let bntCopyGradient = document.createElement("button");
@@ -142,13 +151,29 @@ function fontURL(url) {
     document.head.appendChild(cssLinkFont);
 }
 
-
 bntCreateFont.addEventListener('click', function () { createBoxFont(); });
 BntGradient.addEventListener('click', function () { createBoxgradient(); });
 createBntColor.addEventListener('click', function () { createBoxColor(); });
+
+
 
 fetch('colores.php').then(Response => Response.json()).then(colors => {
     colors.forEach((color) => {
         createBoxColor(color);
     })
 })
+
+fetch('gradients.php').then(Response => Response.json()).then((gradients) => {
+    // gradients.forEach((gradient) => {
+    //     createBoxgradient(gradient);
+    // })
+    gradients.forEach((gradient) => {
+        let firstColorGradinet = (gradient.fristColor); // Imprime el valor de 'firstColor'
+        let codeDegGradient = (gradient.deg); // Imprime el valor de 'deg'
+        let secondColorGradient = (gradient.secondColor); // Imprime el valor de 'secondColor'
+        createBoxgradient(firstColorGradinet, codeDegGradient, secondColorGradient);
+    })
+    
+})
+
+

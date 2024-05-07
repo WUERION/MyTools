@@ -21,7 +21,21 @@ $sql = "INSERT INTO colores (hexa) VALUES ('$code_color')";
 if ($conn->query($sql) === true) {
     echo "registro creado";
 } else {
-    echo "Error:" . $sql . '<br>' . $conn->error;
+    echo "Error:" . $sql . $conn->error;
+};
+
+// recogemos los datos del from
+$code_gradient_first = $_POST['firstColor'];
+$code_gradient_deg = $_POST['deg'];
+$code_gradient_second = $_POST['secondColor'];
+
+// sentencia de insercion
+$sql_gradient = "INSERT INTO gradient (firstColor, deg, secondColor) VALUES ('$code_gradient_first', '$code_gradient_deg', '$code_gradient_second')"; 
+
+if ($conn->query($sql_gradient) === true) {
+    echo "registro creado";
+} else {
+    echo "Error: " . $sql_gradient . $conn->error;
 }
 
 // sentencia para obtener los datos
@@ -37,7 +51,21 @@ if($result) {
         
     }
 } else {
-    echo 'Error' . $sql . '<br>' . mysqli_error($conn);
+    echo 'Error' . $sql . mysqli_error($conn);
+}
+
+$sql_gradient = 'SELECT id, firstColor, deg, secondColor FROM gradient';
+$result_gradient = $conn->query($sql_gradient);
+
+if($result_gradient) {
+    // while ($row = mysqli_fetch_assoc($result_gradient)) {
+    //     echo '<p style="color: cyan;">' . $row['firstColor, deg, secondColor'] . '</p>';
+    // }
+    while ($row = $result_gradient->fetch_assoc()) {
+        echo $row['firstColor, deg, secondColor'];
+    }
+} else {
+    echo 'Error' . $sql_gradient . mysqli_error($conn);
 }
 
 header('Location: index.php');

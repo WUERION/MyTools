@@ -51,9 +51,9 @@
             <div class="flex flex-col items-center gap-2 md:flex-row justify-center md:mt-5 w-full">
                 <p class="flex mx-3 lg:mx-0 lg:text-lg">Ingresa el Color <span class="hidden md:block"> --> </span>
                 </p>
-                <form action="colores.php" method="POST">
+                <form action="coneact.php" method="POST">
                     <input type="text" class="px-2 text-black rounded-md outline-none" placeholder="Ingresa el codigo HEXA o RGB" id="inputCodeColor" name="dataColor">
-                    <input type="submit" value="Enviar" id="buttonColor" class="text-base lg:text-lg px-2 border bg-gray-500 rounded-md">
+                    <input type="submit" value="Crear color" id="buttonColor" class="text-base lg:text-lg px-2 border bg-gray-500 rounded-md">
                 </form>
             </div>
             <!--* container  -->
@@ -78,12 +78,12 @@
             </div>
             <div class="flex flex-col items-center gap-2 lg:flex-row justify-center md:mt-5 w-full">
                 <p class="flex mx-3 md:mx-0 lg:text-lg text-base my-2 md:my-0">Ingresa los colores <span class="hidden lg:block mx-3"> --> </span></p>
-                <div class="flex flex-col gap-2 justify-center md:flex-row">
-                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4" placeholder="#FFE53B" id="inputFristColor">
-                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4" placeholder="90deg" id="inputDeg">
-                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4" placeholder="#00ffff" id="inputSecondColor">
-                    <button class="w-full text-base lg:text-lg px-2 border bg-gray-500 rounded-md md:w-1/5 lg:w-1/5" id="buttonGradient">Crear gradiente</button>
-                </div>
+                <form action="coneact.php" method="POST" class="flex flex-col gap-2 jsutyfi-center md:flex-row">
+                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4" placeholder="#FFE53B" id="inputfirstColor" name="firstColor">
+                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4" placeholder="90deg" id="inputDeg" name="deg">
+                    <input type="text" class="px-2 text-black rounded-md outline-none md:w-1/5 lg:w-1/4" placeholder="#00FFFF" id="inputSecondColor" name="secondColor">
+                    <input type="submit" value="Crear Gadiente" id="buttonGradient" class="text-base px-2 border bg-gray-500 rounded-md lg:text-lg">
+                </form>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 p-5" id="containerCardsGradiendt">
                 <div class="cards-gradient">

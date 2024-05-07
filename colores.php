@@ -14,6 +14,7 @@ while($row = $result->fetch_assoc()) {
     $colors[] = $row['hexa'];
 }
 
-echo json_encode($colors);
 // header('Location: index.php');
+echo json_encode($colors);
 
+?>
