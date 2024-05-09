@@ -12,7 +12,7 @@ let bntCreateFont = document.getElementById("buttonFont");
 function createBoxColor(color) {
     //* obtenemos el valor del input
     let inputColor = color || document.getElementById("inputCodeColor").value;
-    
+
     //* creamos la nueva card
     let newCard = document.createElement('div');
     newCard.classList.add('cards-colors');
@@ -33,7 +33,7 @@ function createBoxColor(color) {
     let newTextHexa = document.createElement("p");
     newTextHexa.classList.add("text-color");
     containerTextColors.appendChild(newTextHexa);
-    newTextHexa.innerText = inputColor || '#FFFFFF';
+    newTextHexa.innerText = inputColor;
     newTextHexa.style.textTransform = "uppercase";
 
     //* creamos el texto RGB
@@ -49,7 +49,7 @@ function createBoxColor(color) {
     newCard.appendChild(bntCopyColor);
     bntCopyColor.innerText = 'Copy';
 
-    const copyColor = async() => {
+    const copyColor = async () => {
         try {
             await navigator.clipboard.writeText(color);
             console.log('texto copiado')
@@ -58,7 +58,7 @@ function createBoxColor(color) {
             console.log('error al copiar el color' + err);
         }
     }
-    
+
     function hexa_rgb(code_hexa) {
         code_hexa = code_hexa.replace(/^#/, ''); //* liminamos el #
         //* convertir los valores hexa a decimal
@@ -75,7 +75,7 @@ function createBoxgradient(val1, val2, val3) {
     let codeDeg = val2 || document.getElementById("inputDeg").value;
     let secondColor = val3 || document.getElementById("inputSecondColor").value;
 
-    console.log(val1, val2, val3)
+    // console.log(val1, val2, val3)
 
     let newCardGradient = document.createElement("div");
     newCardGradient.classList.add("cards-gradient");
@@ -92,38 +92,49 @@ function createBoxgradient(val1, val2, val3) {
 
     let firstTextColor = document.createElement('p');
     containerTextGradient.appendChild(firstTextColor);
-    firstTextColor.innerText = firstColor || '#FFE3B';
+    firstTextColor.innerText = firstColor;
     firstTextColor.style.textTransform = 'uppercase';
 
     let textDeg = document.createElement('p');
-    textDeg.innerText = codeDeg || '90deg';
+    textDeg.innerText = codeDeg;
     containerTextGradient.appendChild(textDeg);
     textDeg.style.textTransform = 'uppercase';
 
     let secundTextColor = document.createElement('p');
     containerTextGradient.appendChild(secundTextColor);
-    secundTextColor.innerText = secondColor || '#00FFFF';
+    secundTextColor.innerText = secondColor;
     secundTextColor.style.textTransform = 'uppercase'
 
     let bntCopyGradient = document.createElement("button");
     bntCopyGradient.classList.add("button-copy");
     bntCopyGradient.innerText = 'Copy';
     newCardGradient.appendChild(bntCopyGradient);
+
+    const copyGradient = async () => {
+        try {
+            await navigator.clipboard.writeText(val1, val2, val3);
+            alert('gradiente copiado:' + val1 + ',' + val2 + ',' + val3);
+        } catch (err) {
+            alert("Error al copiar" + err);
+        }
+    }
+
+    bntCopyGradient.addEventListener("click", function () { copyGradient(val1, val2, val3) })
 }
 
-function createBoxFont() {
-    let inputNameFont = document.getElementById("inputNameFont").value;
-    let inputURL = document.getElementById("inputURL").value;
+function createBoxFont(name, url) {
+    let inputNameFont = name || document.getElementById("inputNameFont").value;
+    let inputURL = url || document.getElementById("inputURL").value;
     fontURL(inputURL);
 
     let newCardFont = document.createElement("div");
     newCardFont.classList.add("card-font")
-    containerCardsFonts.appendChild(newCardFont);
+    containerCardFonts.appendChild(newCardFont);
 
     let nameFont = document.createElement("h3");
     nameFont.classList.add("name-font");
     newCardFont.appendChild(nameFont);
-    nameFont.innerText = inputNameFont || 'Nunito';
+    nameFont.innerText = inputNameFont;
     nameFont.style.fontFamily = inputNameFont;
 
     let boxTextExampleFont = document.createElement("div");
@@ -173,7 +184,16 @@ fetch('gradients.php').then(Response => Response.json()).then((gradients) => {
         let secondColorGradient = (gradient.secondColor); // Imprime el valor de 'secondColor'
         createBoxgradient(firstColorGradinet, codeDegGradient, secondColorGradient);
     })
-    
+
 })
 
+fetch('fonts.php').then(Response => Response.json()).then((fonts) => {
+    fonts.forEach((font) => {
+        let nameFont = (font.name);
+        let urlFont = (font.url);
+        console.log(nameFont)
+        console.log(urlFont)
+        createBoxFont(nameFont, urlFont);
+    })
+})
 

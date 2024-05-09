@@ -58,7 +58,7 @@
             </div>
             <!--* container  -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 p-5" id="containerCardsColors">
-                <div class="cards-colors">
+                <!-- <div class="cards-colors">
                     <div class="block-color" id="block-color">
                     </div>
                     <div class="container-text-color">
@@ -66,7 +66,7 @@
                         <p class="textRGB">rgb(255, 255, 255)</p>
                     </div>
                     <button class="button-copy">Copy</button>
-                </div>
+                </div> -->
             </div>
         </section>
         <!--* section gradients -->
@@ -86,16 +86,6 @@
                 </form>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 p-5" id="containerCardsGradiendt">
-                <div class="cards-gradient">
-                    <div class="block-gradient" id="block-gradient"></div>
-                    <div class="container-text-gradient">
-                        <p>#FFE53B</p>
-                        <p>90deg</p>
-                        <p>#00FFFF</p>
-                    </div>
-                    <button class="button-copy">Copy</button>
-                </div>
-            </div>
         </section>
         <!--* section fonts  -->
         <section id="fonts" class="p-5">
@@ -105,24 +95,14 @@
                     gustan</p>
             </div>
             <div class="flex justify-center items-center py-2">
-                <div class="flex flex-col items-center justify-center w-full gap-2 md:flex-row lg:gap-6">
-                    <p class="flex mx-2 lg:mx-0">Ingresa la fuente <span class="hidden md:block mx-3"> --> </span></p>
-                    <input type="text" class="rounded-md outline-none px-2 text-black" placeholder="Ingresa el nombre" id="inputNameFont">
-                    <input type="url" class="rounded-md outline-none px-2 text-black" placeholder="Ingresa la URL" id="inputURL">
-                    <button class="md:w-1/7 text-base lg:text-lg px-2 border bg-gray-500 rounded-md" id="buttonFont">Subir Font</button>
-                </div>
+                <p class="flex mx-2 lg:mx-0">Ingresa la fuente <span class="hidden md:block mx-3"> --> </span></p>
+                <form action="coneact.php" method="POST" class="flex justify-center items-center py-2 gap-2">
+                    <input type="text" class="px-2 text-black rounded-md outline-none" placeholder="Ingresa el nombre" id="inputNameFont" name="nameFont">
+                    <input type="text" class="px-2 text-black rounded-md outline-none" placeholder="Ingresa la URL" id="inputURL" name="urlFont">
+                    <input type="submit" value="Crear font" class="text-base px-2 bg-gray-500 rounded-md md:w-1/7 lg:text-lg" id="buttonFont">
+                </form>
             </div>
-            <div class="">
-                <div class="grid gap-4 p-5 md:grid-cols-2 lg:grid-cols-4" id="containerCardsFonts">
-                    <div class="card-font">
-                        <h3 class="name-font">Nunito</h3>
-                        <div class="box-the-text">
-                            <p class="text-example">A, a, B, b, C, c, 1, 2, 3, 4, 5, 0</p>
-                        </div>
-                        <button class="button-copy">Copy</button>
-                    </div>
-                </div>
-            </div>
+            <div class="grid gap-4 p-5 md:grid-cols-2 lg:grid-cols-4" id="containerCardsFonts">
         </section>
     </main>
     <script src="index.js"></script>
