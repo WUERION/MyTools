@@ -1,0 +1,46 @@
+.notify {
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 5px 0 0 5px;
+    position: fixed;
+    bottom: 5px;
+    right: 0;
+    color: transparent;
+    text-wrap: nowrap;
+    animation: expandNotify ease-in-out 5s;
+}
+
+@keyframes expandNotify {
+    0% {
+        width: 0;
+    }
+    50% {
+        background-color: white;
+        width: 20%;
+        color: black;
+    }
+    100%{
+        width: 0;
+    }
+}
+
+@media (max-width:640px) {
+    .notify {
+        animation: notifyMovil ease-in-out 10s;
+        bottom: 50px;
+    }
+}
+
+@keyframes notifyMovil {
+    0%{
+        width: 0;
+    }
+    50% {
+        width: 50%;
+        background-color: white;
+        color: black;
+    }
+    100% {
+        width: 0;
+    }
+}
