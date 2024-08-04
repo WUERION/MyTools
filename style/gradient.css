@@ -1,0 +1,49 @@
+.notifyG {
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 5px 0 0 5px;
+    position: fixed;
+    bottom: 5px;
+    right: 0;
+    color: transparent;
+    animation: expandNotify ease-in-out 5s;
+    text-wrap: nowrap;
+}
+
+@keyframes expandNotify {
+    0% {
+        width: 0;
+    }
+    
+    50% {
+        background-color: white;
+        width: 30%;
+        color: black;
+    }
+    
+    100% {
+        width: 0;
+    }
+}
+
+@media (max-width:640px) {
+
+    .notifyG {
+        animation: notifyMovil ease-in-out 10s;
+        bottom: 50px;
+    }
+}
+
+@keyframes notifyMovil {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 70%;
+        background-color: white;
+        color: black;
+    }
+    100% {
+        width: 0;
+    }
+}
