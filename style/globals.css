@@ -1,0 +1,38 @@
+.card {
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.card:hover {
+    border: 1px solid #00ffff;
+    transform: scale(1.05);
+}
+
+.codeColor {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.boxColor {
+    height: 3.5rem;
+    border-radius: 4px;
+}
+
+.copybnt {
+    color: white;
+    padding: 0.25rem;
+}
+.copybnt:hover {
+    color: #00ffff;
+}
+
+@media (min-width: 1024px) {
+    .codeColor {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
+}
