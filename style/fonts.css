@@ -1,0 +1,47 @@
+.card {
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.card:hover {
+    border-color: aqua;
+    transform: scale(1.05);
+}
+
+.container {
+    padding: 20px;
+}
+
+.nameFont {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.textFont {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 1.5rem;
+}
+
+.copyFont {
+    padding: 1px;
+    color: white;
+}
+
+.copyFont:hover {
+    color: aqua;
+}
+
+@media (min-width:1024px) {
+
+    .nameFont,
+    .textFont {
+        font-size: 1.125rem;
+        font-weight: 1.25rem;
+    }
+
+}
