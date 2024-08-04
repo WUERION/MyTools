@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Tools | fonts</title>
-    <link rel="stylesheet" href="../style/output.css">
-    <link rel="stylesheet" href="../style/fonts.css">
-    <link rel="stylesheet" href="../style/notify.css">
-    <link rel="shortcut icon" href="../img/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="/style/output.css">
+    <link rel="stylesheet" href="/style/fonts.css">
+    <link rel="stylesheet" href="/style/notify.css">
+    <link rel="shortcut icon" href="/img/logo.webp" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
             <ul class="flex justify-between px-5">
                 <ul class="flex gap-5">
                     <li><a href="#"><img src="../img/logo.webp" alt="logo" class="w-6 rounded"></a></li>
-                    <li><a href="index.php"><svg class="fill-white w-6 transition duration-700 ease-in-out hover:fill-cyan-hover" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <li><a href="../index.php"><svg class="fill-white w-6 transition duration-700 ease-in-out hover:fill-cyan-hover" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                                 <path d="m29.707 15.793-13-13a.999.999 0 0 0-1.414 0l-13 13a.999.999 0 1 0 1.414 1.414L16 4.914l8.014 8.014c-.001.025-.014.047-.014.072v15H8V18a1 1 0 1 0-2 0v11a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V14.914l2.293 2.293a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414z">
                                 </path>
                             </svg></a></li>
