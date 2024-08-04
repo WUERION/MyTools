@@ -20,7 +20,7 @@
             <ul class="flex justify-between px-5">
                 <ul class="flex gap-5">
                     <li><a href="#"><img src="../img/logo.webp" alt="logo" class="w-6 rounded"></a></li>
-                    <li><a href="index.php"><svg class="fill-white w-6 transition duration-700 ease-in-out hover:fill-cyan-hover" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <li><a href="../index.php"><svg class="fill-white w-6 transition duration-700 ease-in-out hover:fill-cyan-hover" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                                 <path d="m29.707 15.793-13-13a.999.999 0 0 0-1.414 0l-13 13a.999.999 0 1 0 1.414 1.414L16 4.914l8.014 8.014c-.001.025-.014.047-.014.072v15H8V18a1 1 0 1 0-2 0v11a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V14.914l2.293 2.293a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414z">
                                 </path>
                             </svg></a></li>
